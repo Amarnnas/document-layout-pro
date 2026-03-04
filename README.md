@@ -19,6 +19,44 @@
 2. انتظر Sync.
 3. شغّل التطبيق على جهاز أندرويد أو محاكي.
 
+## تحويل المشروع إلى APK (خطوة بخطوة)
+
+### الطريقة الأسهل (من Android Studio)
+1. من القائمة اختر: **Build**
+2. ثم اختر: **Build Bundle(s) / APK(s)**
+3. ثم: **Build APK(s)**
+4. بعد انتهاء البناء اضغط **locate** لفتح مسار الملف.
+
+المسار غالبًا يكون:
+`app/build/outputs/apk/debug/app-debug.apk`
+
+### نسخة جاهزة للنشر (Signed APK)
+1. من القائمة: **Build > Generate Signed Bundle / APK**.
+2. اختر **APK**.
+3. أنشئ أو اختر ملف التوقيع `keystore.jks`.
+4. اختر `release` ثم Finish.
+
+المسار غالبًا يكون:
+`app/build/outputs/apk/release/app-release.apk`
+
+> مهم: نسخة `release` تحتاج توقيع حتى تعمل كتطبيق توزيع رسمي.
+
+### البناء من الطرفية (Terminal)
+```bash
+gradle assembleDebug
+```
+
+ولنسخة النشر:
+```bash
+gradle assembleRelease
+```
+
+### إذا ظهر خطأ Java / Gradle
+- هذا المشروع مضبوط على **Java 17**.
+- داخل Android Studio اختر JDK 17 من:
+  `Settings > Build, Execution, Deployment > Build Tools > Gradle > Gradle JDK`.
+- ثم أعد Sync وجرّب البناء مرة ثانية.
+
 ## البنية
 - `app/src/main/java/com/example/offlineaccounting/data`: قواعد البيانات والكيانات.
 - `app/src/main/java/com/example/offlineaccounting/domain`: المستودع.
