@@ -1,4 +1,3 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/README.md b/README.md
 index efbc596f29e94c0d8a9dc1b0da50426b376dd1bb..ed574fe23361de8e44b2d1e9b4430c166cd5ae68 100644
 --- a/README.md
@@ -77,6 +76,3 @@ index efbc596f29e94c0d8a9dc1b0da50426b376dd1bb..ed574fe23361de8e44b2d1e9b4430c16
 +- طباعة حرارية (Bluetooth / USB).
 +- تعدد مستخدمين وصلاحيات.
 +- مزامنة اختيارية مع سحابة (مع بقاء الأوفلاين أساسي).
- 
-EOF
-)
